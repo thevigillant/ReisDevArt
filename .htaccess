@@ -1,0 +1,11 @@
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  
+  # Redirect root to out/index.html
+  RewriteRule ^$ out/index.html [L]
+
+  # Redirect all other requests to out/ folder
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteRule ^(.*)$ out/$1 [L]
+</IfModule>
