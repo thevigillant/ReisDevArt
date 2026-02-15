@@ -18,54 +18,67 @@ import { Reveal } from "@/components/ui/Reveal"
 export default function Home() {
   return (
     <>
-      {/* Hero Section */}
-      <section className="relative pt-32 pb-24 lg:pt-48 lg:pb-32 overflow-hidden flex flex-col justify-center min-h-[90vh]">
+      {/* Hero Section - Unique Experience */}
+      <section className="relative pt-32 pb-24 lg:pt-48 lg:pb-32 overflow-hidden flex flex-col justify-center min-h-[92vh]">
+        {/* Atmospheric Background */}
+        <div className="absolute inset-0 z-0 select-none pointer-events-none">
+          <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[800px] h-[800px] bg-blue-600/10 rounded-full blur-[120px] mix-blend-screen animate-pulse" />
+          <div className="absolute top-1/3 left-1/4 w-[600px] h-[600px] bg-violet-600/10 rounded-full blur-[100px] mix-blend-screen animate-float" style={{ animationDelay: "2s" }} />
+          <div className="absolute bottom-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-blue-500/50 to-transparent opacity-50" />
+        </div>
+
         <Container className="flex flex-col items-center text-center relative z-10">
 
           <Reveal delay={0.1}>
-            <Badge variant="neon" className="mb-8 px-6 py-2 text-sm bg-blue-500/10 border-blue-400/30 text-blue-300 shadow-[0_0_20px_-5px_theme(colors.blue.500)] backdrop-blur-md">
-              <span className="relative flex h-2 w-2 mr-2">
+            <div className="inline-flex items-center gap-2 mb-8 px-4 py-1.5 rounded-full border border-blue-500/30 bg-blue-500/5 backdrop-blur-md shadow-[0_0_20px_-10px_theme(colors.blue.500)] group hover:border-blue-500/50 transition-colors">
+              <span className="relative flex h-2 w-2">
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
                 <span className="relative inline-flex rounded-full h-2 w-2 bg-blue-500"></span>
               </span>
-              {profile.headline.split('.')[0]}
-            </Badge>
+              <span className="text-xs font-mono text-blue-300 tracking-wider uppercase">Disponível para novos projetos</span>
+            </div>
           </Reveal>
 
           <Reveal delay={0.2}>
-            <h1 className="max-w-5xl text-6xl font-black tracking-tighter sm:text-7xl md:text-8xl lg:text-9xl mb-8 bg-gradient-to-b from-white via-gray-200 to-gray-500 bg-clip-text text-transparent drop-shadow-2xl">
-              Sites que <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 via-indigo-500 to-violet-500 animate-gradient-x">Vendem</span>
+            <h1 className="max-w-6xl text-5xl sm:text-7xl md:text-8xl lg:text-[7rem] font-black tracking-tighter leading-[0.9] mb-8 text-white relative">
+              <span className="block text-transparent bg-clip-text bg-gradient-to-b from-white via-white to-gray-500 pb-4">
+                Arquitetura Digital
+              </span>
+              <span className="block text-4xl sm:text-6xl md:text-7xl lg:text-[6rem] text-transparent bg-clip-text bg-gradient-to-r from-blue-500 via-violet-500 to-blue-500 animate-gradient-x">
+                De Outro Mundo
+              </span>
             </h1>
           </Reveal>
 
           <Reveal delay={0.3}>
-            <p className="max-w-2xl text-xl text-gray-400 md:text-2xl mb-12 leading-relaxed font-light">
-              Transformo ideias em <span className="text-white font-semibold">experiências digitais futuristas</span>. Automação, performance e design de outro mundo para seu negócio escalar.
+            <p className="max-w-2xl text-lg sm:text-xl text-gray-400 md:text-2xl mb-12 leading-relaxed font-light mx-auto">
+              Não crio apenas sites. Esculpo <span className="text-white font-medium">ecossistemas digitais imersivos</span> que fundem design visceral com performance extrema. Sua marca, elevada ao nível da arte.
             </p>
           </Reveal>
 
           <Reveal delay={0.4}>
-            <div className="flex flex-col sm:flex-row gap-6 w-full max-w-lg justify-center">
-              <Button href={profile.whatsapp} target="_blank" size="lg" variant="glow" className="w-full sm:w-auto text-lg h-14">
-                <Zap className="mr-2 h-5 w-5 fill-current" /> Iniciar Projeto
+            <div className="flex flex-col sm:flex-row gap-5 w-full max-w-lg justify-center items-center">
+              <Button href={profile.whatsapp} target="_blank" size="lg" variant="glow" className="w-full sm:w-auto text-lg h-16 rounded-full px-10 shadow-[0_0_40px_-10px_theme(colors.blue.600)] hover:shadow-[0_0_60px_-10px_theme(colors.blue.600)] transition-shadow">
+                <Zap className="mr-2 h-5 w-5 fill-current" /> Começar a Jornada
               </Button>
-              <Button href="/portfolio" variant="secondary" size="lg" className="w-full sm:w-auto text-lg h-14 border-white/20 hover:bg-white/10">
-                Ver Cases <ArrowRight className="ml-2 h-5 w-5" />
+              <Button href="/portfolio" variant="ghost" size="lg" className="w-full sm:w-auto text-lg h-16 text-gray-400 hover:text-white hover:bg-white/5 rounded-full px-8">
+                Explorar Universo <ArrowRight className="ml-2 h-5 w-5" />
               </Button>
             </div>
           </Reveal>
 
           <Reveal delay={0.6}>
-            <div className="mt-16 flex items-center justify-center gap-8 text-sm text-gray-500 font-mono border-t border-white/5 pt-8 w-full max-w-md mx-auto">
-              <div className="flex items-center gap-2">
-                <Code className="h-4 w-4 text-blue-500" /> Next.js 15
-              </div>
-              <div className="flex items-center gap-2">
-                <Cpu className="h-4 w-4 text-violet-500" /> Automation
-              </div>
-              <div className="flex items-center gap-2">
-                <ShieldCheck className="h-4 w-4 text-emerald-500" /> Secure
-              </div>
+            <div className="mt-20 grid grid-cols-3 gap-8 md:gap-16 border-t border-white/5 pt-8 max-w-3xl mx-auto">
+              {[
+                { label: "Performance", val: "100/100" },
+                { label: "Design", val: "Premium" },
+                { label: "Segurança", val: "Blindada" }
+              ].map((stat, i) => (
+                <div key={i} className="flex flex-col items-center">
+                  <span className="text-2xl md:text-3xl font-black text-white mb-1">{stat.val}</span>
+                  <span className="text-xs font-mono text-blue-500/70 uppercase tracking-widest">{stat.label}</span>
+                </div>
+              ))}
             </div>
           </Reveal>
 
