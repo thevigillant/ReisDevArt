@@ -8,19 +8,19 @@ import { profile } from "@/data/profile";
 
 const inter = Inter({ subsets: ["latin"] });
 
-export const metadata: Metadata = {
-  title: {
-    template: `%s | ${profile.name}`,
-    default: `${profile.name} - ${profile.role}`,
+title: {
+  template: `%s | ReisDevArt`,
+    default: `ReisDevArt - Sites que Vendem & Automação`,
   },
-  description: profile.subheadline,
-  metadataBase: new URL("https://brunoreis.dev"), // Placeholder URL
-  openGraph: {
-    type: "website",
+description: profile.subheadline,
+  metadataBase: new URL("https://reisdev.art"),
+    openGraph: {
+  type: "website",
     locale: "pt_BR",
-    title: `${profile.name} - ${profile.role}`,
-    description: profile.subheadline,
-    siteName: profile.name,
+      url: "https://reisdev.art",
+        title: `ReisDevArt - ${profile.role}`,
+          description: profile.subheadline,
+            siteName: "ReisDevArt",
   },
 };
 
