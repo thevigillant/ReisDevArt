@@ -1,11 +1,23 @@
 <IfModule mod_rewrite.c>
   RewriteEngine On
-  
-  # Redirect root to out/index.html
+  RewriteBase /
+
+  # 1. Redirect root to out/index.html
   RewriteRule ^$ out/index.html [L]
 
-  # Redirect all other requests to out/ folder
+  # 2. If the request points directly to a file that exists in /out, serve it.
   RewriteCond %{REQUEST_FILENAME} !-f
-  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteCond %{DOCUMENT_ROOT}/out/$1 -f
   RewriteRule ^(.*)$ out/$1 [L]
+
+  # 3. If the request points to a path that matches a .html file in /out, serve the .html file.
+  #    Example: /contato -> out/contato.html
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{DOCUMENT_ROOT}/out/$1.html -f
+  RewriteRule ^(.*)$ out/$1.html [L]
+
+  # 4. If the request points to a directory in /out that has an index.html, serve it.
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{DOCUMENT_ROOT}/out/$1/index.html -f
+  RewriteRule ^(.*)$ out/$1/index.html [L]
 </IfModule>
