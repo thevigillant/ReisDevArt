@@ -44,7 +44,7 @@ export default function ContactPage() {
                                         <div className="bg-violet-500/20 p-4 rounded-xl text-violet-400 group-hover:text-white group-hover:bg-violet-500 transition-colors">
                                             <Mail className="h-6 w-6" />
                                         </div>
-                                        <span className="font-mono">contato@brunoreis.dev</span>
+                                        <span className="font-mono">{profile.email}</span>
                                     </div>
 
                                     <div className="flex items-center gap-6 group cursor-pointer hover:translate-x-2 transition-transform">
