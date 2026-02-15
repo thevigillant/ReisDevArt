@@ -25,34 +25,68 @@ export function ContactForm() {
         setFormData(prev => ({ ...prev, [name]: value }))
     }
 
+    const [success, setSuccess] = useState(false)
+
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault()
         setIsLoading(true)
 
-        // Simulate loading
-        await new Promise(resolve => setTimeout(resolve, 1000))
+        try {
+            const response = await fetch("https://formsubmit.co/ajax/ceo@reisdev.art", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                    "Accept": "application/json"
+                },
+                body: JSON.stringify({
+                    ...formData,
+                    _subject: `Novo Contato do Site: ${formData.nome}`,
+                    _template: "table",
+                    _captcha: "false"
+                })
+            })
 
-        // Build mailto link
-        const subject = `Novo Orçamento: ${formData.servico} - ${formData.nome}`
-        const body = `
-Nome: ${formData.nome}
-Email: ${formData.email}
-WhatsApp: ${formData.whatsapp}
-Empresa: ${formData.empresa || "N/A"}
-Serviço: ${formData.servico}
-Urgência: ${formData.urgencia}
-
-Mensagem:
-${formData.mensagem}
-    `.trim()
-
-        window.location.href = `mailto:${profile.email || "contato@brunoreis.dev"}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`
-
-        setIsLoading(false)
+            if (response.ok) {
+                setSuccess(true)
+                setFormData({
+                    nome: "",
+                    email: "",
+                    whatsapp: "",
+                    empresa: "",
+                    servico: "Landing Page",
+                    urgencia: "Normal",
+                    mensagem: ""
+                })
+            } else {
+                alert("Ocorreu um erro ao enviar. Tente novamente ou chame no WhatsApp.")
+            }
+        } catch (error) {
+            console.error("Erro ao enviar:", error)
+            alert("Erro de conexão. Verifique sua internet.")
+        } finally {
+            setIsLoading(false)
+        }
     }
 
     const inputClasses = "flex h-12 w-full rounded-lg border border-white/10 bg-white/5 px-4 py-3 text-sm text-white placeholder:text-gray-500 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500/50 focus-visible:border-blue-500 focus-visible:bg-blue-900/10 transition-all disabled:cursor-not-allowed disabled:opacity-50"
     const labelClasses = "text-xs font-bold text-gray-400 uppercase tracking-widest mb-2 block"
+
+    if (success) {
+        return (
+            <div className="bg-green-500/10 border border-green-500/20 rounded-2xl p-8 text-center animate-in fade-in zoom-in duration-300">
+                <div className="w-16 h-16 bg-green-500 rounded-full flex items-center justify-center mx-auto mb-4 shadow-[0_0_20px_theme(colors.green.500)]">
+                    <svg className="w-8 h-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
+                    </svg>
+                </div>
+                <h3 className="text-2xl font-bold text-white mb-2">Mensagem Recebida!</h3>
+                <p className="text-gray-400 mb-6">Obrigado pelo contato. Vou analisar seu projeto e retorno em breve no seu email ou WhatsApp.</p>
+                <Button onClick={() => setSuccess(false)} variant="outline" className="border-white/10 hover:bg-white/5">
+                    Enviar nova mensagem
+                </Button>
+            </div>
+        )
+    }
 
     return (
         <form onSubmit={handleSubmit} className="space-y-8">
