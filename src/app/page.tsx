@@ -57,7 +57,7 @@ export default function Home() {
           </Reveal>
 
           <Reveal delay={0.4}>
-            <div className="flex flex-col sm:flex-row gap-5 w-full max-w-lg justify-center items-center">
+            <div className="flex flex-col sm:flex-row gap-5 w-full max-w-2xl justify-center items-center">
               <Button href={profile.whatsapp} target="_blank" size="lg" variant="glow" className="w-full sm:w-auto min-w-[240px] text-lg h-16 rounded-full px-12 shadow-[0_0_40px_-10px_theme(colors.blue.600)] hover:shadow-[0_0_60px_-10px_theme(colors.blue.600)] transition-shadow">
                 <Zap className="mr-2 h-5 w-5 fill-current flex-shrink-0" /> Começar a Jornada
               </Button>
