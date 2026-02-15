@@ -165,7 +165,7 @@ export function ContactForm() {
                         </>
                     ) : (
                         <>
-                            <Mail className="mr-2 h-4 w-4" /> Enviar por E-mail
+                            <Mail className="mr-2 h-4 w-4" /> Enviar Mensagem
                         </>
                     )}
                 </Button>
