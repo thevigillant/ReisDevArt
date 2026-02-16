@@ -36,14 +36,14 @@ export function Navbar() {
             className={cn(
                 "fixed top-4 left-0 right-0 z-50 transition-all duration-500 px-4 md:px-8 max-w-7xl mx-auto rounded-2xl",
                 scrolled
-                    ? "bg-[#030712]/60 backdrop-blur-2xl border border-white/10 shadow-[0_8px_32px_rgba(0,0,0,0.5)] py-3"
+                    ? "bg-[#030712]/60 backdrop-blur-2xl shadow-[0_8px_32px_rgba(0,0,0,0.5)] py-3"
                     : "bg-transparent py-5"
             )}
         >
             <div className="flex items-center justify-between">
                 <Link href="/" className="flex items-center gap-4 group" onClick={() => setIsOpen(false)}>
                     {/* Abstract Logo */}
-                    <div className="relative w-10 h-10 flex items-center justify-center overflow-hidden rounded-xl bg-gradient-to-tr from-white/10 to-transparent border border-white/10 group-hover:border-blue-500/50 transition-colors duration-500">
+                    <div className="relative w-10 h-10 flex items-center justify-center overflow-hidden rounded-xl bg-gradient-to-tr from-white/10 to-transparent border border-white/5 group-hover:border-blue-500/50 transition-colors duration-500">
                         <div className="absolute inset-0 bg-blue-500/20 blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" className="text-white relative z-10 transform group-hover:scale-110 transition-transform duration-500">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
@@ -61,7 +61,7 @@ export function Navbar() {
                 </Link>
 
                 {/* Desktop Nav */}
-                <nav className="hidden md:flex items-center gap-1 p-1 bg-white/5 rounded-full border border-white/5 backdrop-blur-sm">
+                <nav className="hidden md:flex items-center gap-1 p-1 bg-white/5 rounded-full backdrop-blur-sm shadow-lg shadow-black/20">
                     {navLinks.map((link) => (
                         <Link
                             key={link.href}
