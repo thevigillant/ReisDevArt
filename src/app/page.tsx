@@ -1,5 +1,6 @@
 
 import Link from "next/link"
+import Image from "next/image"
 import { ArrowRight, CheckCircle, Clock, Zap, ShieldCheck, Play, Code, Cpu } from "lucide-react"
 
 import { profile } from "@/data/profile"
@@ -209,9 +210,13 @@ export default function Home() {
                     </div>
                   </div>
                   <div className="order-1 md:order-2 relative aspect-video rounded-xl overflow-hidden bg-black/50 border border-white/10 group-hover:shadow-[0_0_30px_-5px_rgba(59,130,246,0.3)] transition-shadow">
-                    <div className="absolute inset-0 bg-gradient-to-tr from-blue-900/20 to-violet-900/20 flex items-center justify-center">
-                      <span className="text-white/20 font-black text-4xl uppercase tracking-widest group-hover:text-white/40 transition-colors duration-500">Preview</span>
-                    </div>
+                    <Image
+                      src={project.imageUrl}
+                      alt={project.title}
+                      fill
+                      className="object-cover transition-transform duration-700 group-hover:scale-105 opacity-80 group-hover:opacity-100"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#030712] via-transparent to-transparent opacity-60 pointer-events-none" />
                   </div>
                 </div>
               </Reveal>
