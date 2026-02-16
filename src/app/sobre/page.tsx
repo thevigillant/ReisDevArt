@@ -52,12 +52,10 @@ export default function AboutPage() {
                             {/* Background Glow */}
                             <div className="absolute inset-0 bg-blue-500/20 blur-[80px] -z-10 group-hover:bg-blue-500/30 transition-colors duration-700" />
 
-                            <Image
+                            <img
                                 src="/brunoreis.jpeg"
                                 alt="Bruno Reis - Analista Full-Stack & Designer"
-                                fill
-                                className="object-cover object-top filter grayscale hover:grayscale-0 transition-all duration-700 scale-100 group-hover:scale-105"
-                                priority
+                                className="w-full h-full object-cover object-top filter grayscale hover:grayscale-0 transition-all duration-700 scale-100 group-hover:scale-105"
                             />
 
                             {/* Overlay subtle */}
