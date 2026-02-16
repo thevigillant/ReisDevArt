@@ -9,8 +9,17 @@ export function Footer() {
         <footer className="border-t border-white/5 bg-[#020617] py-16 text-gray-400">
             <Container className="flex flex-col gap-12 md:flex-row md:justify-between md:items-start">
                 <div className="space-y-6 max-w-sm">
-                    <Link href="/" className="text-2xl font-bold tracking-tighter text-white">
-                        <span className="bg-gradient-to-r from-blue-400 to-violet-500 bg-clip-text text-transparent">BrunoReis</span>.dev
+                    <Link href="/" className="flex items-center gap-3 group">
+                        <div className="relative w-8 h-8 flex items-center justify-center overflow-hidden rounded-lg bg-white/5 border border-white/10 group-hover:border-blue-500/50 transition-colors">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" className="text-white relative z-10 transform group-hover:scale-110 transition-transform duration-500">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 18L22 12L16 6" />
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 6L2 12L8 18" />
+                            </svg>
+                        </div>
+                        <div className="flex flex-col">
+                            <span className="text-lg font-black tracking-widest text-white group-hover:text-blue-400 transition-colors uppercase leading-none">BRUNO REIS</span>
+                            <span className="text-[10px] font-medium tracking-[0.2em] text-gray-500 group-hover:text-gray-400 transition-colors uppercase leading-none mt-1">Desenvolvedor & Designer</span>
+                        </div>
                     </Link>
                     <p className="text-sm leading-relaxed text-gray-500">
                         {profile.subheadline}
