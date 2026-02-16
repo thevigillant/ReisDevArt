@@ -10,8 +10,27 @@ import { Badge } from "@/components/ui/Badge"
 
 export const metadata = {
     title: "Sobre Mim",
-    description: "Conheça Bruno Reis, engenheiro full-stack e designer.",
+    description: "Conheça Bruno Reis, Analista Full-Stack e Designer focado em gerar valor através da tecnologia.",
 }
+
+const techStack = [
+    {
+        category: "Frontend",
+        skills: ["React & Next.js", "Tailwind CSS", "TypeScript", "Framer Motion"]
+    },
+    {
+        category: "Backend & DB",
+        skills: ["Node.js", "PostgreSQL", "MySQL", "REST APIs"]
+    },
+    {
+        category: "Design",
+        skills: ["Figma", "UI/UX Design", "Branding", "Visual Identity"]
+    },
+    {
+        category: "Ferramentas",
+        skills: ["Git & GitHub", "Docker", "Vercel / Hosting", "CI/CD"]
+    }
+]
 
 const differentials = [
     {
@@ -108,9 +127,9 @@ export default function AboutPage() {
                 <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
                     {differentials.map((item, i) => (
                         <Reveal key={item.title} delay={i * 0.1}>
-                            <Card className="text-center h-full bg-white/5 border-white/5 hover:border-blue-500/30 group">
+                            <Card className="text-center h-full bg-white/5 border-white/5 hover:border-blue-500/30 group transition-all duration-300">
                                 <CardHeader className="flex flex-col items-center pt-8">
-                                    <div className="p-5 rounded-2xl bg-gradient-to-br from-blue-500/10 to-violet-500/10 text-blue-400 mb-6 group-hover:from-blue-500 group-hover:to-violet-500 group-hover:text-white transition-all duration-500 ring-1 ring-white/10">
+                                    <div className="p-5 rounded-2xl bg-gradient-to-br from-blue-500/10 to-violet-500/10 text-blue-400 mb-6 group-hover:from-blue-500 group-hover:to-violet-500 group-hover:text-white transition-all duration-500 ring-1 ring-white/10 shadow-lg shadow-blue-500/5">
                                         <item.icon className="h-8 w-8" />
                                     </div>
                                     <CardTitle className="text-xl mb-4 text-white group-hover:text-blue-300">{item.title}</CardTitle>
@@ -122,6 +141,79 @@ export default function AboutPage() {
                         </Reveal>
                     ))}
                 </div>
+
+                {/* Tech Stack Section */}
+                <div className="mt-32">
+                    <SectionTitle
+                        title="Arsenal Tecnológico"
+                        subtitle="Ferramentas e tecnologias que utilizo para construir soluções de alta performance."
+                        align="center"
+                    />
+
+                    <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
+                        {techStack.map((tech, i) => (
+                            <Reveal key={tech.category} delay={i * 0.1}>
+                                <div className="p-6 rounded-2xl bg-white/5 border border-white/5 hover:border-blue-500/20 group transition-all duration-300 h-full">
+                                    <h3 className="text-blue-400 font-mono text-xs uppercase tracking-widest mb-4">{tech.category}</h3>
+                                    <ul className="space-y-2">
+                                        {tech.skills.map(skill => (
+                                            <li key={skill} className="text-gray-300 font-medium flex items-center gap-2">
+                                                <div className="w-1.5 h-1.5 rounded-full bg-blue-500/40 group-hover:bg-blue-500 transition-colors" />
+                                                {skill}
+                                            </li>
+                                        ))}
+                                    </ul>
+                                </div>
+                            </Reveal>
+                        ))}
+                    </div>
+                </div>
+
+                {/* Expertise Focus / Value Props */}
+                <div className="mt-32 border-t border-white/5 pt-32">
+                    <div className="grid gap-16 md:grid-cols-2 items-center">
+                        <Reveal>
+                            <h2 className="text-3xl md:text-5xl font-black text-white leading-tight mb-6">
+                                Minha Missão é <span className="text-blue-500">Transformar</span> Ideias em <span className="text-violet-500">Impacto Digital.</span>
+                            </h2>
+                            <p className="text-gray-400 text-lg leading-relaxed max-w-xl">
+                                Acredito que a tecnologia deve ser invisível e eficiente. Meu trabalho é garantir que sua marca tenha uma presença digital tão poderosa quanto a qualidade dos seus produtos.
+                            </p>
+                        </Reveal>
+
+                        <div className="grid gap-6">
+                            {[
+                                { title: "Performance Extrema", desc: "Sites que carregam em milissegundos, garantindo que você não perca nenhum cliente." },
+                                { title: "Design que Converte", desc: "Interfaces focadas em guiar o usuário para a ação desejada." },
+                                { title: "Código Escalável", desc: "Sistemas preparados para crescer junto com o seu negócio." }
+                            ].map((focus, i) => (
+                                <Reveal key={focus.title} delay={i * 0.1}>
+                                    <div className="p-6 rounded-2xl bg-white/5 border border-white/5 hover:bg-white/[0.07] transition-colors relative group">
+                                        <div className="absolute left-0 top-0 bottom-0 w-1 bg-blue-600 rounded-l-2xl opacity-0 group-hover:opacity-100 transition-opacity" />
+                                        <h4 className="text-white font-bold mb-2">{focus.title}</h4>
+                                        <p className="text-gray-400 text-sm leading-relaxed">{focus.desc}</p>
+                                    </div>
+                                </Reveal>
+                            ))}
+                        </div>
+                    </div>
+                </div>
+
+                {/* Final CTA in About Page */}
+                <Reveal delay={0.4}>
+                    <div className="mt-32 p-12 rounded-3xl bg-gradient-to-br from-blue-600/20 to-violet-600/20 border border-white/10 text-center relative overflow-hidden group">
+                        <div className="absolute inset-0 bg-[url('/grid.svg')] opacity-10" />
+                        <h3 className="text-3xl font-bold text-white mb-6 relative z-10">Pronto para elevar o nível do seu projeto?</h3>
+                        <p className="text-gray-300 mb-10 max-w-2xl mx-auto relative z-10 font-light">
+                            Vamos conversar sobre como posso te ajudar a alcançar seus objetivos digitais com design premium e engenharia de ponta.
+                        </p>
+                        <div className="relative z-10 flex flex-col sm:flex-row gap-4 justify-center">
+                            <Button href="/contato" size="lg" variant="glow" className="px-12 rounded-full h-14 text-lg">
+                                Iniciar Projeto
+                            </Button>
+                        </div>
+                    </div>
+                </Reveal>
 
             </Container>
         </div>
