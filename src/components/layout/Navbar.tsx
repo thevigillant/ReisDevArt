@@ -34,75 +34,86 @@ export function Navbar() {
     return (
         <header
             className={cn(
-                "fixed top-0 z-50 w-full transition-all duration-300 border-b border-white/5",
-                scrolled ? "bg-[#030712]/80 backdrop-blur-xl shadow-lg border-white/10" : "bg-transparent"
+                "fixed top-4 left-0 right-0 z-50 transition-all duration-500 px-4 md:px-8 max-w-7xl mx-auto rounded-2xl",
+                scrolled
+                    ? "bg-[#030712]/60 backdrop-blur-2xl border border-white/10 shadow-[0_8px_32px_rgba(0,0,0,0.5)] py-3"
+                    : "bg-transparent py-5"
             )}
         >
-            <Container className="flex h-16 items-center justify-between">
-                <Link href="/" className="flex items-center gap-3 group select-none" onClick={() => setIsOpen(false)}>
-                    <div className="relative bg-gradient-to-br from-blue-600 to-violet-600 p-2 rounded-xl group-hover:shadow-[0_0_25px_rgba(79,70,229,0.5)] group-hover:scale-105 transition-all duration-300 border border-white/10">
-                        <Rocket className="w-5 h-5 text-white drop-shadow-md" />
+            <div className="flex items-center justify-between">
+                <Link href="/" className="flex items-center gap-4 group" onClick={() => setIsOpen(false)}>
+                    {/* Abstract Logo */}
+                    <div className="relative w-10 h-10 flex items-center justify-center overflow-hidden rounded-xl bg-gradient-to-tr from-white/10 to-transparent border border-white/10 group-hover:border-blue-500/50 transition-colors duration-500">
+                        <div className="absolute inset-0 bg-blue-500/20 blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" className="text-white relative z-10 transform group-hover:rotate-12 transition-transform duration-500">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1" />
+                        </svg>
                     </div>
-                    <div className="flex flex-col justify-center">
-                        <span className="text-xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-white via-white to-gray-300 group-hover:to-white transition-colors leading-none tracking-tight">
-                            Bruno Reis
+
+                    <div className="flex flex-col">
+                        <span className="font-display font-medium text-lg tracking-[0.2em] text-white leading-none group-hover:text-blue-200 transition-colors duration-300">
+                            BRUNO REIS
                         </span>
-                        <span className="text-[10px] uppercase tracking-[0.15em] text-blue-400/90 font-semibold group-hover:text-blue-300 transition-colors mt-1">
-                            Desenvolvedor & Designer
+                        <span className="text-[10px] uppercase tracking-[0.3em] text-gray-400 font-light mt-1.5 group-hover:text-white transition-colors duration-300 border-l border-blue-500 pl-2">
+                            Engineering & Design
                         </span>
                     </div>
                 </Link>
 
                 {/* Desktop Nav */}
-                <nav className="hidden md:flex gap-8 items-center">
+                <nav className="hidden md:flex items-center gap-1 p-1 bg-white/5 rounded-full border border-white/5 backdrop-blur-sm">
                     {navLinks.map((link) => (
                         <Link
                             key={link.href}
                             href={link.href}
-                            className="text-sm font-medium text-gray-300 hover:text-white hover:drop-shadow-[0_0_8px_rgba(255,255,255,0.5)] transition-all"
+                            className="relative px-6 py-2 text-sm font-light tracking-wide text-gray-300 hover:text-white transition-all duration-300 rounded-full hover:bg-white/10"
                         >
                             {link.name}
                         </Link>
                     ))}
+                    <div className="w-px h-6 bg-white/10 mx-2" />
                     <Button
                         href={profile.whatsapp}
                         target="_blank"
                         rel="noopener noreferrer"
-                        variant="primary"
-                        size="sm"
-                        className="shadow-[0_0_15px_-3px_rgba(59,130,246,0.4)] hover:shadow-[0_0_20px_0px_rgba(139,92,246,0.6)] border border-blue-500/30"
+                        className="rounded-full bg-white text-black hover:bg-blue-50 hover:text-blue-600 border-none font-medium px-6 py-2 tracking-wide shadow-[0_0_20px_rgba(255,255,255,0.2)] hover:shadow-[0_0_25px_rgba(255,255,255,0.4)] transition-all duration-300"
                     >
-                        Orçamento
+                        Iniciar Projeto
                     </Button>
                 </nav>
 
                 {/* Mobile Toggle */}
-                <button onClick={toggle} className="md:hidden p-2 text-gray-300 hover:text-white transition-colors">
-                    {isOpen ? <X size={24} /> : <Menu size={24} />}
+                <button
+                    onClick={toggle}
+                    className="md:hidden p-3 rounded-xl bg-white/5 border border-white/10 text-gray-300 hover:text-white hover:bg-white/10 transition-all active:scale-95"
+                >
+                    {isOpen ? <X size={20} strokeWidth={1.5} /> : <Menu size={20} strokeWidth={1.5} />}
                 </button>
-            </Container>
+            </div>
 
             {/* Mobile Menu */}
             {isOpen && (
-                <div className="absolute top-16 left-0 w-full bg-[#030712]/95 backdrop-blur-xl border-b border-white/10 p-4 flex flex-col gap-4 shadow-2xl md:hidden animate-in slide-in-from-top-4 duration-300">
-                    {navLinks.map((link) => (
-                        <Link
-                            key={link.href}
-                            href={link.href}
-                            className="text-base font-medium text-gray-300 hover:text-blue-400 hover:pl-2 transition-all py-2 border-b border-white/5 last:border-0"
-                            onClick={() => setIsOpen(false)}
-                        >
-                            {link.name}
-                        </Link>
-                    ))}
+                <div className="absolute top-full left-0 right-0 mt-4 mx-2 p-6 bg-[#0a0a0a]/95 backdrop-blur-3xl border border-white/10 rounded-3xl flex flex-col gap-6 shadow-2xl md:hidden animate-in slide-in-from-top-4 fade-in duration-300 z-50">
+                    <div className="flex flex-col gap-2">
+                        {navLinks.map((link) => (
+                            <Link
+                                key={link.href}
+                                href={link.href}
+                                className="text-lg font-light tracking-wider text-gray-400 hover:text-white hover:pl-4 transition-all duration-300 py-3 border-b border-white/5 last:border-0"
+                                onClick={() => setIsOpen(false)}
+                            >
+                                {link.name}
+                            </Link>
+                        ))}
+                    </div>
                     <Button
                         href={profile.whatsapp}
                         target="_blank"
                         fullWidth
                         onClick={() => setIsOpen(false)}
-                        className="mt-2 bg-gradient-to-r from-blue-600 to-violet-600 border-none"
+                        className="bg-white text-black hover:bg-gray-200 border-none rounded-xl py-4 font-medium tracking-widest uppercase text-xs"
                     >
-                        Orçamento Rápido
+                        Iniciar Projeto
                     </Button>
                 </div>
             )}

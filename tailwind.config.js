@@ -19,6 +19,10 @@ module.exports = {
         "border-dim": "var(--border-dim)",
         "border-highlight": "var(--border-highlight)",
       },
+      fontFamily: {
+        sans: ["var(--font-inter)", "sans-serif"],
+        display: ["var(--font-outfit)", "sans-serif"],
+      },
       animation: {
         float: "float 6s ease-in-out infinite",
         glow: "glow 2s ease-in-out infinite alternate",
