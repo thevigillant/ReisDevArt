@@ -55,7 +55,7 @@ export function Navbar() {
                             BRUNO REIS
                         </span>
                         <span className="text-[10px] uppercase tracking-[0.3em] text-gray-400 font-light mt-1.5 group-hover:text-white transition-colors duration-300 border-l border-blue-500 pl-2">
-                            Engineering & Design
+                            DESENVOLVEDOR & DESIGNER
                         </span>
                     </div>
                 </Link>
