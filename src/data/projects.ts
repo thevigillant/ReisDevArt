@@ -29,7 +29,7 @@ export const projects = [
         title: "Viva Sport - High Performance Brand",
         category: "Brand Strategy",
         tags: ["Branding", "Visual Identity", "Strategy"],
-        imageUrl: "/projects/case-gym.svg",
+        imageUrl: "/projects/vivasport.png",
         summary: "Identidade visual estratégica desenhada para transmitir disciplina e força.",
         problem: "Marcas fitness genéricas falham em criar conexão emocional e lealdade com o público de alta performance.",
         solution: "Criação de um sistema visual agressivo e dinâmico, forjado para inspirar movimento e superação em cada ponto de contato.",
