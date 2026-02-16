@@ -11,7 +11,7 @@ const variants = {
     ghost: "hover:bg-white/5 text-gray-300 hover:text-white",
     link: "text-blue-400 underline-offset-4 hover:underline hover:text-blue-300",
     destructive: "bg-red-500/10 text-red-400 border border-red-500/20 hover:bg-red-500/20",
-    glow: "bg-blue-600 text-white shadow-[0_0_20px_-5px_var(--color-brand-primary)] hover:shadow-[0_0_30px_-5px_var(--color-brand-primary)] transition-shadow duration-300 border border-blue-400/50"
+    glow: "bg-gradient-to-r from-blue-600 to-violet-600 text-white shadow-[0_0_20px_-5px_theme(colors.blue.500)] hover:shadow-[0_0_35px_-5px_theme(colors.blue.500)] hover:scale-[1.02] transition-all duration-300 border border-white/20 ring-1 ring-white/10 ring-inset"
 }
 
 const sizes = {

@@ -60,8 +60,8 @@ export default function Home() {
 
           <Reveal delay={0.4}>
             <div className="flex flex-col sm:flex-row gap-5 w-full max-w-2xl justify-center items-center">
-              <Button href={profile.whatsapp} target="_blank" size="lg" variant="glow" className="w-full sm:w-auto min-w-[240px] text-lg h-16 rounded-full px-12 shadow-[0_0_40px_-10px_theme(colors.blue.600)] hover:shadow-[0_0_60px_-10px_theme(colors.blue.600)] transition-shadow">
-                <Zap className="mr-2 h-5 w-5 fill-current flex-shrink-0" /> Começar a Jornada
+              <Button href={profile.whatsapp} target="_blank" size="lg" variant="glow" className="w-full sm:w-auto min-w-[240px] text-lg h-16 rounded-full px-12 group">
+                Começar a Jornada <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
               </Button>
               <Button href="/portfolio" variant="ghost" size="lg" className="w-full sm:w-auto text-lg h-16 text-gray-400 hover:text-white hover:bg-white/5 rounded-full px-8">
                 Explorar Universo <ArrowRight className="ml-2 h-5 w-5" />
