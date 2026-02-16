@@ -30,12 +30,14 @@ export default function Home() {
         <Container className="flex flex-col items-center text-center relative z-10">
 
           <Reveal delay={0.1}>
-            <div className="inline-flex items-center gap-2 mb-8 px-4 py-1.5 rounded-full border border-blue-500/30 bg-blue-500/5 backdrop-blur-md shadow-[0_0_20px_-10px_theme(colors.blue.500)] group hover:border-blue-500/50 transition-colors">
-              <span className="relative flex h-2 w-2">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
-                <span className="relative inline-flex rounded-full h-2 w-2 bg-blue-500"></span>
+            <div className="inline-flex items-center gap-3 px-5 py-2.5 rounded-full bg-white/5 border border-white/10 backdrop-blur-md hover:border-emerald-500/30 hover:bg-white/10 transition-all duration-300 cursor-default group">
+              <span className="relative flex h-2.5 w-2.5">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75 duration-1000"></span>
+                <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-500 shadow-[0_0_10px_theme(colors.emerald.500)]"></span>
               </span>
-              <span className="text-xs font-mono text-blue-300 tracking-wider uppercase">Disponível para novos projetos</span>
+              <span className="text-sm font-medium text-gray-200 tracking-wide group-hover:text-white transition-colors font-sans">
+                Disponível para novos projetos
+              </span>
             </div>
           </Reveal>
 
