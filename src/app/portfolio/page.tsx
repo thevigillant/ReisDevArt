@@ -1,5 +1,6 @@
 
 import Link from "next/link"
+import Image from "next/image"
 import { projects } from "@/data/projects"
 import { Container } from "@/components/ui/Container"
 import { SectionTitle } from "@/components/ui/Section"
@@ -28,12 +29,18 @@ export default function PortfolioPage() {
                         <Reveal key={project.id} delay={i * 0.1}>
                             <Card className="h-full bg-white/5 border-white/10 group cursor-pointer hover:shadow-[0_0_40px_-10px_rgba(59,130,246,0.3)] transition-all duration-500 overflow-visible">
                                 <div className="relative aspect-video bg-black/50 overflow-hidden rounded-t-xl group-hover:bg-blue-900/10 transition-colors">
-                                    <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-80" />
-                                    <Badge variant="neon" className="absolute top-4 right-4 backdrop-blur-md bg-black/40 border-white/10 text-white z-10">
+                                    <Image
+                                        src={project.imageUrl}
+                                        alt={project.title}
+                                        fill
+                                        className="object-cover transition-transform duration-700 group-hover:scale-105 opacity-80 group-hover:opacity-100"
+                                    />
+                                    <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-80 z-10" />
+                                    <Badge variant="neon" className="absolute top-4 right-4 backdrop-blur-md bg-black/40 border-white/10 text-white z-20">
                                         {project.category}
                                     </Badge>
-                                    <div className="absolute bottom-4 left-4 z-10">
-                                        <h3 className="text-xl font-bold text-white group-hover:text-blue-300 transition-colors">{project.title}</h3>
+                                    <div className="absolute bottom-4 left-4 z-20 pr-4">
+                                        <h3 className="text-xl font-bold text-white group-hover:text-blue-300 transition-colors drop-shadow-md">{project.title}</h3>
                                     </div>
                                 </div>
 
