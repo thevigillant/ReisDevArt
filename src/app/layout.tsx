@@ -11,18 +11,49 @@ const outfit = Outfit({ subsets: ["latin"], variable: "--font-outfit" });
 
 export const metadata: Metadata = {
   title: {
-    template: `%s | ReisDevArt`,
-    default: `ReisDevArt - Sites que Vendem & Automação`,
+    template: `%s | Bruno Reis - Desenvolvedor & Designer`,
+    default: `Bruno Reis | Criação de Sites Modernos e Alta Performance`,
   },
   description: profile.subheadline,
+  category: 'technology',
+  authors: [{ name: 'Bruno Reis', url: 'https://reisdev.art' }],
+  keywords: [
+    'Bruno Reis', 'Desenvolvedor Web', 'Web Designer', 'Criação de Sites',
+    'Landing Page Alta Coversão', 'Design Moderno', 'Next.js', 'React',
+    'Freelancer Front-end', 'Programador Sites', 'Portfólio Tech'
+  ],
   metadataBase: new URL("https://reisdev.art"),
   openGraph: {
     type: "website",
     locale: "pt_BR",
     url: "https://reisdev.art",
-    title: `ReisDevArt - ${profile.role}`,
+    title: `Bruno Reis - Desenvolvedor & Designer Digital`,
     description: profile.subheadline,
-    siteName: "ReisDevArt",
+    siteName: "Bruno Reis Portfolio",
+    images: [
+      {
+        url: '/og-image.jpg', // Certifique-se de ter uma imagem OG
+        width: 1200,
+        height: 630,
+        alt: 'Bruno Reis - Desenvolvedor Web & Designer',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Bruno Reis - Desenvolvedor & Designer',
+    description: profile.subheadline,
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
   },
 };
 
