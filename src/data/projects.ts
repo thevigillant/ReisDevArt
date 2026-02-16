@@ -41,7 +41,7 @@ export const projects = [
         title: "Upholstery - Luxury Design",
         category: "Premium Design",
         tags: ["Minimalism", "Luxury", "UI Design"],
-        imageUrl: "/projects/case-upholstery.svg",
+        imageUrl: "/projects/upholstery.png",
         summary: "Branding minimalista para o mercado de mobiliário de alto padrão.",
         problem: "Produtos exclusivos perdem valor percebido quando apresentados com uma identidade visual comum ou poluída.",
         solution: "Desenvolvimento de uma linguagem visual sofisticada baseada no minimalismo, tipografia refinada e uso estratégico do espaço.",
