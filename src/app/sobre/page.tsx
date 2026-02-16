@@ -48,23 +48,29 @@ export default function AboutPage() {
                 {/* Bio Section */}
                 <div className="grid gap-12 md:grid-cols-2 items-center mb-32">
                     <Reveal delay={0.2}>
-                        <div className="relative aspect-[3/4] w-full max-w-sm mx-auto rounded-2xl overflow-hidden shadow-2xl bg-white/5 border border-white/10 group ring-1 ring-white/10 isolate hover:shadow-[0_0_50px_-10px_rgba(59,130,246,0.5)] transition-shadow duration-700">
+                        <div className="relative aspect-[3/4] w-full max-w-sm mx-auto rounded-2xl overflow-hidden shadow-2xl bg-[#030712] border border-blue-500/30 group ring-1 ring-blue-500/20 isolate transition-all duration-500 hover:shadow-[0_0_50px_rgba(59,130,246,0.6)] hover:border-blue-400/50">
                             {/* Background Glow */}
-                            <div className="absolute inset-0 bg-blue-500/20 blur-[80px] -z-10 group-hover:bg-blue-500/30 transition-colors duration-700" />
+                            <div className="absolute inset-0 bg-blue-600/20 blur-[60px] -z-10 group-hover:bg-blue-500/30 transition-colors duration-700" />
 
                             <img
                                 src="/brunoreis.jpeg"
                                 alt="Bruno Reis - Analista Full-Stack & Designer"
-                                className="w-full h-full object-cover object-top filter grayscale hover:grayscale-0 transition-all duration-700 scale-100 group-hover:scale-105"
+                                className="w-full h-full object-cover object-top transition-transform duration-700 scale-100 group-hover:scale-105"
                             />
 
-                            {/* Overlay subtle */}
-                            <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-transparent to-transparent opacity-60 pointer-events-none" />
+                            {/* High Tech Overlay (Cyan Tint) - Removed on Hover */}
+                            <div className="absolute inset-0 bg-blue-900/20 mix-blend-overlay transition-opacity duration-500 group-hover:opacity-0" />
 
-                            {/* Floating Name Badge */}
-                            <div className="absolute bottom-6 left-6 right-6 backdrop-blur-md bg-white/10 border border-white/20 p-4 rounded-xl translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500">
-                                <p className="text-white font-bold text-lg">Bruno Reis</p>
-                                <p className="text-blue-300 text-xs uppercase tracking-widest font-mono">Analista & Designer</p>
+                            {/* Scanline Effect (Subtle) */}
+                            <div className="absolute inset-0 bg-[linear-gradient(rgba(18,16,16,0)_50%,rgba(0,0,0,0.25)_50%),linear-gradient(90deg,rgba(255,0,0,0.06),rgba(0,255,0,0.02),rgba(0,0,255,0.06))] z-10 bg-[length:100%_4px,6px_100%] pointer-events-none opacity-20 group-hover:opacity-0 transition-opacity duration-500" />
+
+                            {/* Dark Gradient at Bottom */}
+                            <div className="absolute inset-0 bg-gradient-to-t from-[#020617] via-transparent to-transparent opacity-90 pointer-events-none z-20" />
+
+                            {/* Name Badge (Always Visible but interactive) */}
+                            <div className="absolute bottom-6 left-6 right-6 backdrop-blur-md bg-white/5 border border-white/10 p-4 rounded-xl z-30 group-hover:bg-blue-900/20 group-hover:border-blue-500/30 transition-all duration-500 shadow-lg">
+                                <p className="text-white font-bold text-lg drop-shadow-md group-hover:text-blue-200 transition-colors">Bruno Reis</p>
+                                <p className="text-blue-400 text-xs uppercase tracking-widest font-mono group-hover:text-blue-300">Analista & Designer</p>
                             </div>
                         </div>
                     </Reveal>
