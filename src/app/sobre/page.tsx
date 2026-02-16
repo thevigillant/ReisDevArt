@@ -1,5 +1,6 @@
 
 import { CheckCircle, Code, Layout, ShieldCheck, Zap } from "lucide-react"
+import Image from "next/image"
 import { Container } from "@/components/ui/Container"
 import { SectionTitle } from "@/components/ui/Section"
 import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/Card"
@@ -47,10 +48,25 @@ export default function AboutPage() {
                 {/* Bio Section */}
                 <div className="grid gap-12 md:grid-cols-2 items-center mb-32">
                     <Reveal delay={0.2}>
-                        <div className="relative aspect-square md:aspect-[4/5] w-full max-w-md mx-auto rounded-3xl overflow-hidden shadow-2xl bg-black border border-white/10 group">
-                            <div className="absolute inset-0 bg-gradient-to-tr from-blue-900/40 to-violet-900/40 opacity-50 group-hover:opacity-100 transition-opacity" />
-                            <div className="absolute inset-0 flex items-center justify-center text-blue-500 font-mono text-2xl tracking-widest bg-[url('/grid.svg')] bg-opacity-20">
-                                BRUNO_REIS.jpg
+                        <div className="relative aspect-[3/4] w-full max-w-sm mx-auto rounded-2xl overflow-hidden shadow-2xl bg-white/5 border border-white/10 group ring-1 ring-white/10 isolate hover:shadow-[0_0_50px_-10px_rgba(59,130,246,0.5)] transition-shadow duration-700">
+                            {/* Background Glow */}
+                            <div className="absolute inset-0 bg-blue-500/20 blur-[80px] -z-10 group-hover:bg-blue-500/30 transition-colors duration-700" />
+
+                            <Image
+                                src="/BrunoReis.jpeg"
+                                alt="Bruno Reis - Analista Full-Stack & Designer"
+                                fill
+                                className="object-cover object-top filter grayscale hover:grayscale-0 transition-all duration-700 scale-100 group-hover:scale-105"
+                                priority
+                            />
+
+                            {/* Overlay subtle */}
+                            <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-transparent to-transparent opacity-60 pointer-events-none" />
+
+                            {/* Floating Name Badge */}
+                            <div className="absolute bottom-6 left-6 right-6 backdrop-blur-md bg-white/10 border border-white/20 p-4 rounded-xl translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500">
+                                <p className="text-white font-bold text-lg">Bruno Reis</p>
+                                <p className="text-blue-300 text-xs uppercase tracking-widest font-mono">Analista & Designer</p>
                             </div>
                         </div>
                     </Reveal>
