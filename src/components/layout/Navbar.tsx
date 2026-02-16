@@ -39,13 +39,18 @@ export function Navbar() {
             )}
         >
             <Container className="flex h-16 items-center justify-between">
-                <Link href="/" className="flex items-center gap-2 text-xl font-bold tracking-tight text-white group" onClick={() => setIsOpen(false)}>
-                    <div className="bg-gradient-to-br from-blue-500 to-violet-600 p-1.5 rounded-lg group-hover:shadow-[0_0_15px_rgba(59,130,246,0.5)] transition-shadow">
-                        <Rocket className="w-5 h-5 text-white" />
+                <Link href="/" className="flex items-center gap-3 group select-none" onClick={() => setIsOpen(false)}>
+                    <div className="relative bg-gradient-to-br from-blue-600 to-violet-600 p-2 rounded-xl group-hover:shadow-[0_0_25px_rgba(79,70,229,0.5)] group-hover:scale-105 transition-all duration-300 border border-white/10">
+                        <Rocket className="w-5 h-5 text-white drop-shadow-md" />
                     </div>
-                    <span className="bg-clip-text text-transparent bg-gradient-to-r from-white to-gray-400 group-hover:to-white transition-colors">
-                        BrunoReis<span className="text-blue-500">.dev</span>
-                    </span>
+                    <div className="flex flex-col justify-center">
+                        <span className="text-xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-white via-white to-gray-300 group-hover:to-white transition-colors leading-none tracking-tight">
+                            Bruno Reis
+                        </span>
+                        <span className="text-[10px] uppercase tracking-[0.15em] text-blue-400/90 font-semibold group-hover:text-blue-300 transition-colors mt-1">
+                            Desenvolvedor & Designer
+                        </span>
+                    </div>
                 </Link>
 
                 {/* Desktop Nav */}
