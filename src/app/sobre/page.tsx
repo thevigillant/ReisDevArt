@@ -41,7 +41,7 @@ export default function AboutPage() {
             <Container>
                 <SectionTitle
                     title="Quem é Bruno Reis"
-                    subtitle="Engenheiro Full-Stack & Designer focado em resultados."
+                    subtitle="Analista Full-Stack & Designer focado em resultados."
                 />
 
                 {/* Bio Section */}
@@ -57,7 +57,7 @@ export default function AboutPage() {
 
                     <div className="space-y-8">
                         <Reveal delay={0.3}>
-                            <Badge variant="neon">Full-Stack Developer</Badge>
+                            <Badge variant="neon">Analista Full-Stack & Designer</Badge>
                             <h2 className="text-4xl md:text-5xl font-black text-white mt-4 mb-6 leading-tight">Olá! Sou Bruno Reis.</h2>
                             <div className="h-1 w-20 bg-blue-500 mb-8 rounded-full" />
 
@@ -65,7 +65,7 @@ export default function AboutPage() {
                                 Ajudo empresas a vender mais com <span className="text-blue-400 font-medium">páginas rápidas</span> e a reduzir trabalho manual com <span className="text-violet-400 font-medium">automações inteligentes</span>.
                             </p>
                             <p className="text-gray-400 leading-relaxed">
-                                Com experiência em desenvolvimento Full-Stack e Design, crio soluções completas: desde a identidade visual que atrai até o sistema que gerencia seus contatos.
+                                Com experiência como Analista Full-Stack e Designer, crio soluções completas: desde a identidade visual que atrai até o sistema que gerencia seus contatos.
                             </p>
                             <p className="text-gray-400 leading-relaxed">
                                 Meu objetivo é simples: tirar a complexidade da tecnologia da sua frente e entregar ferramentas que funcionam pro seu negócio crescer.
