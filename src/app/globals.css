@@ -1,0 +1,92 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Rich Dark Theme Base */
+  --background: #030712;
+  color-scheme: dark;
+  /* Gray 950 */
+  --foreground: #f8fafc;
+  /* Slate 50 */
+
+  /* Brand Colors - High Tech Blue/Violet */
+  --brand-primary-h: 221;
+  --brand-primary-s: 83%;
+  --brand-primary-l: 53%;
+  --brand-primary: hsl(var(--brand-primary-h), var(--brand-primary-s), var(--brand-primary-l));
+  /* Blue 600 equivalent-ish */
+
+  --brand-accent-h: 260;
+  --brand-accent-s: 80%;
+  --brand-accent-l: 60%;
+  --brand-accent: hsl(var(--brand-accent-h), var(--brand-accent-s), var(--brand-accent-l));
+  /* Violet */
+
+  --surface-1: #0f172a;
+  /* Slate 900 */
+  --surface-2: #1e293b;
+  /* Slate 800 */
+  --surface-glass: rgba(15, 23, 42, 0.6);
+
+  --text-primary: #f8fafc;
+  --text-secondary: #94a3b8;
+  /* Slate 400 */
+  --text-muted: #64748b;
+  /* Slate 500 */
+
+  --border-dim: rgba(255, 255, 255, 0.1);
+  --border-highlight: rgba(59, 130, 246, 0.3);
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+  overflow-x: hidden;
+}
+
+/* Fix Autofill Background becoming white */
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0 30px #1e293b inset !important;
+  -webkit-text-fill-color: white !important;
+  transition: background-color 5000s ease-in-out 0s;
+}
+
+@layer utilities {
+
+  /* Custom Utilities for High Tech feel */
+  .glass-panel {
+    background: var(--surface-glass);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid var(--border-dim);
+  }
+
+  .text-gradient {
+    background: linear-gradient(135deg, #60a5fa 0%, #a78bfa 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .bg-grid-pattern {
+    background-size: 50px 50px;
+    background-image:
+      linear-gradient(to right, rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+  }
+
+  .card-hover-effect {
+    transition: all 0.3s ease;
+  }
+
+  .card-hover-effect:hover {
+    transform: translateY(-5px);
+    border-color: var(--brand-primary);
+    box-shadow: 0 10px 40px -10px rgba(59, 130, 246, 0.3);
+  }
+}

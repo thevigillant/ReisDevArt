@@ -1,0 +1,25 @@
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /
+
+  # Disable directory listing to be safe
+  Options -Indexes
+
+  # 1. Redirect root to out/index.html
+  RewriteRule ^$ out/index.html [L]
+
+  # 2. General rule: If a request comes in, look for it inside /out/
+  #    If it's a file in /out, serve it.
+  RewriteCond %{DOCUMENT_ROOT}/out/$1 -f
+  RewriteRule ^(.*)$ out/$1 [L]
+
+  # 3. If it's a directory in /out (like /contato), let Apache look for index.html inside it
+  RewriteCond %{DOCUMENT_ROOT}/out/$1 -d
+  RewriteRule ^(.*)$ out/$1/ [L]
+
+  # 4. Fallback: If nothing matches, it might be a client-side route?
+  #    For a purely static export, usually we just let 404 happen or serve 404.html
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteRule ^(.*)$ out/404.html [L]
+</IfModule>
