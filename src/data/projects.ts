@@ -1,6 +1,30 @@
 
 export const projects = [
     {
+        id: "solimar-boots",
+        title: "Solimar Boots",
+        category: "E-commerce",
+        tags: ["E-commerce", "Moda", "Vendas"],
+        imageUrl: "/projects/case-solimar.png",
+        summary: "Loja virtual moderna e responsiva focada na venda de botas de alta qualidade e resistência.",
+        problem: "A marca necessitava de uma presença digital robusta com um processo de compra fluido para expandir seu alcance online.",
+        solution: "Desenvolvimento de um e-commerce performático, com foco em usabilidade (UX), vitrine detalhada dos produtos e checkout simplificado.",
+        result: "Uma plataforma escalável que eleva a autoridade da marca e otimiza a conversão de visitantes em clientes.",
+        link: "https://solimarboots-production.up.railway.app/"
+    },
+    {
+        id: "solicita",
+        title: "SOlicita - Gestão de Licitações",
+        category: "Web App",
+        tags: ["Sistema Web", "Gestão", "Licitação"],
+        imageUrl: "/projects/case-solicita.png",
+        summary: "Plataforma web para gestão inteligente e organizada de licitações empresariais.",
+        problem: "Empresas lidam com processos de licitação desorganizados em planilhas ou sistemas antigos, perdendo prazos e oportunidades valiosas.",
+        solution: "Desenvolvimento de um sistema completo e moderno para concentrar, acompanhar e gerenciar todas as etapas das licitações em um só lugar.",
+        result: "Mais agilidade no processo de licitação, garantindo o cumprimento de prazos rigorosos e melhor taxa de conversão.",
+        link: "https://solicita-production.up.railway.app/login"
+    },
+    {
         id: "silva-security",
         title: "Silva Security - Proteção Profissional",
         category: "Landing Page",

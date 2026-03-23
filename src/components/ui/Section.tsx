@@ -26,7 +26,7 @@ export function SectionTitle({ title, subtitle, align = "center", className, ...
     return (
         <div className={cn("mb-16 space-y-6 relative z-10", align === "center" && "text-center", align === "right" && "text-right", className)}>
             <h2
-                className="text-4xl font-black tracking-tight text-white sm:text-5xl md:text-6xl text-gradient pb-2 bg-gradient-to-r from-white via-blue-100 to-gray-400 bg-clip-text text-transparent"
+                className="inline-block text-4xl font-black tracking-tight text-white sm:text-5xl md:text-6xl pt-2 pb-4 leading-relaxed bg-gradient-to-r from-white via-blue-100 to-gray-400 bg-clip-text text-transparent"
                 {...props}
             >
                 {title}
